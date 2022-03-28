@@ -537,7 +537,7 @@ The integration with Github OIDC is especially notable because infrastructure pr
 
 The integration with Github Action also provides build steps configurable in your pipelines to perform all the low-level API calls that are needed to get an access token.
 
-You need to keep in mind though that a Github Action pipeline declared in a repository can be misused for privilege escalation if the developers having write access to the repository don't have the pipeline's privileges anyway. Branch protection doesn't fully protect against this. Cloud Build is often used for highly privileged provisioning pipelines for this reason.
+You need to keep in mind though that a Github Action pipeline declared in a repository might be misused for privilege escalation if the developers having write access to the repository don't have the pipeline's privileges anyway. Branch protection has to be used in conjunction with protected environments to fully prevent escalation. Cloud Build is still often preferred for highly privileged provisioning pipelines.
 
 #### Kubernetes Workload Identity
 As also mentioned above, Google Kubernetes Engine is a bit of a special environment, because a single VM can host multiple workloads.
