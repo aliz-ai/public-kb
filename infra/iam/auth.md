@@ -133,7 +133,7 @@ To see a JWT token, you can use:
 
 ```> gcloud auth print-identity-token```
 
-You can then safely copy-paste this token to https://jwt.io and see the information it contains.
+You can then safely copy-paste this token to [https://jwt.io](https://jwt.io) and see the information it contains.
 
 Most typically it will contain:
 ```json
@@ -158,9 +158,9 @@ Most typically it will contain:
 And now let's see how all this works on GCP.
 
 Some useful material:
-* https://cloud.google.com/docs/authentication
-* https://developers.google.com/identity/protocols/oauth2 
-* https://developers.google.com/identity/protocols/oauth2/openid-connect 
+* [https://cloud.google.com/docs/authentication](https://cloud.google.com/docs/authentication)
+* [https://developers.google.com/identity/protocols/oauth2](https://developers.google.com/identity/protocols/oauth2)
+* [https://developers.google.com/identity/protocols/oauth2/openid-connect](https://developers.google.com/identity/protocols/oauth2/openid-connect)
 
 Basically it will be OAuth2 / OIDC in the end.
 
@@ -453,7 +453,7 @@ With Workload Identity Federation, you register an external OpenID Connect provi
 
 When you register such a provider in a Workload Identity Pool, you basically say that _the public keys published by these providers should be trusted as JWT token signers_.
 
-As we discussed above, OIDC requires a provider to publish a [/.well-known/openid-configuration](https://accounts.google.com/.well-known/openid-configuration) file, which includes a field named `jwks_uri`. In case of GCP this is https://www.googleapis.com/oauth2/v3/certs - you can see certificates here which are used for JWT token signing. Other providers will publish keys similarly.
+As we discussed above, OIDC requires a provider to publish a [/.well-known/openid-configuration](https://accounts.google.com/.well-known/openid-configuration) file, which includes a field named `jwks_uri`. In case of GCP this is [https://www.googleapis.com/oauth2/v3/certs](https://www.googleapis.com/oauth2/v3/certs) - you can see certificates here which are used for JWT token signing. Other providers will publish keys similarly.
 
 In short, instead of GCP trusting its own copy of the public key of a service account key pair, it will trust the publicly available certificate that you registered to the identity pool.
 
