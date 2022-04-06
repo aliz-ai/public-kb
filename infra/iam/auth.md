@@ -364,15 +364,6 @@ curl -H "Authorization: Bearer $(gcloud auth application-default print-access-to
   https://cloudresourcemanager.googleapis.com/v1/projects
 ```
 
-Using a signed JWT:
-
-```
-curl -H "Authorization: Bearer $(gcloud auth print-access-token)" \
- https://compute.googleapis.com/compute/v1/projects/$(gcloud config get project)/zones
-```
-
-Not all GCP APIs support using a JWT token directly, so you should use an access token by default when possible. A signed JWT token can be exchanged to an access token anyway using the token endpoint we discussed above.
-
 It's important to know that to successfully make an API call, you need all of the following conditions:
 * An access token that was granted the necessary __scopes__ for the operation. You can find the full list of scopes used by Google services [here](https://developers.google.com/identity/protocols/oauth2/scopes)
 * Sufficient __IAM permissions__. GCP products usually have a page in their documentation dedicated to discussing permissions and roles involved, but there's also a useful [full reference page](https://cloud.google.com/iam/docs/permissions-reference).
